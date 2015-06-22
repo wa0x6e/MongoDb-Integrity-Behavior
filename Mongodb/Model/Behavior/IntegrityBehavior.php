@@ -71,7 +71,7 @@ class IntegrityBehavior extends ModelBehavior
 		else
 		{
 			if ($data instanceof MongoId)
-				return $value;
+				return $data->{'$id'};
 			elseif ($data instanceof MongoDate)
 				return date('Y-m-d H:i:s', $data->sec);
 			else return $data;
